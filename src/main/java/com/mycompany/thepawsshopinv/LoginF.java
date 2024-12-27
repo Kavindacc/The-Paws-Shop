@@ -26,6 +26,7 @@ public class LoginF extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -33,6 +34,8 @@ public class LoginF extends javax.swing.JFrame {
         tfUsername = new javax.swing.JTextField();
         pwfPassword = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
+        radioCashier = new javax.swing.JRadioButton();
+        radioManager = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,28 +67,38 @@ public class LoginF extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(radioCashier);
+        radioCashier.setSelected(true);
+        radioCashier.setText("Login as a cashier");
+        radioCashier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioCashierActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(radioManager);
+        radioManager.setText("Login as a manager");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(90, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addComponent(radioManager)
+                    .addComponent(radioCashier)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(77, 77, 77)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tfUsername)
-                                    .addComponent(pwfPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))))
-                        .addGap(82, 82, 82))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnLogin)
-                        .addGap(235, 235, 235))))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(77, 77, 77)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tfUsername)
+                            .addComponent(pwfPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))))
+                .addGap(82, 82, 82))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,24 +112,32 @@ public class LoginF extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(pwfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
-                .addComponent(btnLogin)
-                .addGap(67, 67, 67))
+                .addGap(34, 34, 34)
+                .addComponent(radioCashier)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radioManager)
+                .addGap(12, 12, 12)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
+
+        radioCashier.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -126,27 +147,31 @@ public class LoginF extends javax.swing.JFrame {
     private void handleLogin() {
         String username = tfUsername.getText().trim();
         String password = new String(pwfPassword.getPassword()).trim();
-
+        String filePath = "UserCrd.txt";
         
-        User user = checkCredentials("C:\\Users\\USER\\Desktop\\netb\\ThePawsShopInv\\UserCrd.txt", username, password, "Manager");
-        if (user != null) {
-           
-            new MngrDash().setVisible(true);
-            this.dispose();
-            return;
+        if(radioManager.isSelected()){
+            User user = checkCredentials(filePath, username, password, "Manager");
+            if (user != null) {
+
+                new MngrDash().setVisible(true);
+                this.dispose();
+                return;
+            }else{
+                JOptionPane.showMessageDialog(this, "Invalid User Credentials. No Manager exists for this credentials.", "Login Failed", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }else if(radioCashier.isSelected()){
+            User user = checkCredentials(filePath, username, password, "Cashier");
+            if (user != null) {
+                new InventoryCashier().setVisible(true);
+                this.dispose();
+                return;
+            }else{
+                JOptionPane.showMessageDialog(this, "Invalid User Credentials. No Cashier exists for this credentials.", "Login Failed", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
         }
-
-        
-        user = checkCredentials("C:\\Users\\USER\\Desktop\\netb\\ThePawsShopInv\\UserCrd.txt", username, password, "Cashier");
-        if (user != null) {
-            
-            new InventoryCashier().setVisible(true);
-            this.dispose();
-            return;
-        }
-
-        
-        JOptionPane.showMessageDialog(this, "Invalid User Credentials", "Login Failed", JOptionPane.ERROR_MESSAGE);
+                   
     }
 
     private User checkCredentials(String filePath, String username, String password, String role) {
@@ -158,6 +183,7 @@ public class LoginF extends javax.swing.JFrame {
                     String fileUsername = userDetails[2].trim();
                     String filePassword = userDetails[3].trim();
                     String fileRole = userDetails[4].trim();
+                    
                     if (fileUsername.equals(username) && filePassword.equals(password) && fileRole.equalsIgnoreCase(role)) {
                         String name = userDetails[0].trim();
                         String gender = userDetails[1].trim();
@@ -184,17 +210,24 @@ public class LoginF extends javax.swing.JFrame {
         handleLogin();
     }//GEN-LAST:event_btnLoginActionPerformed
 
+    private void radioCashierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioCashierActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioCashierActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> new LoginF().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField pwfPassword;
+    private javax.swing.JRadioButton radioCashier;
+    private javax.swing.JRadioButton radioManager;
     private javax.swing.JTextField tfUsername;
     // End of variables declaration//GEN-END:variables
 }

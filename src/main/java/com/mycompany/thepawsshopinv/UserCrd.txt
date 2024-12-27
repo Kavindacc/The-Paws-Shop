@@ -8,4 +8,3 @@ Manitha,M,Maniyeah,maniya123,Cashier
 Theekshana,M,kande,kande23,Cashier
 Chamika,F,chamika96,chamika96,Cashier
 Pasan,M,psanx,nb123,Cashier
-naveen,F,naveendanj,naveen123,Cashier

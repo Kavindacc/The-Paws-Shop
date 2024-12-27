@@ -168,6 +168,7 @@ public class CreateAcc extends javax.swing.JFrame {
         String gender = tfNewGender.getText().trim().toUpperCase();
         String username = tfNewUsername.getText().trim();
         String password = new String(pfNewPassword.getPassword()).trim();
+        String filePath = "UserCrd.txt";
 
         if (name.isEmpty() || gender.isEmpty() || username.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Fields cannot be empty", "Error", JOptionPane.ERROR_MESSAGE);
@@ -179,7 +180,7 @@ public class CreateAcc extends javax.swing.JFrame {
             return;
         }
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\USER\\Desktop\\netb\\ThePawsShopInv\\UserCrd.txt", true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
             writer.write(name + "," + gender + "," + username + "," + password +"," +"Cashier");
             writer.newLine();
             JOptionPane.showMessageDialog(this, "User added successfully", "Success", JOptionPane.INFORMATION_MESSAGE);

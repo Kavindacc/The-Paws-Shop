@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  * @author USER
  */
 public class Inventory extends javax.swing.JFrame {
-    private final String filePath = "C:\\Users\\USER\\Desktop\\netb\\ThePawsShopInv\\Products.txt";
+    private final String filePath = "Products.txt";
 
     public Inventory() {
         initComponents();
