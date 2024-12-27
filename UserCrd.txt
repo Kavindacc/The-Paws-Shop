@@ -1,0 +1,10 @@
+Danuka, M, dxnuka, 72315, Manager
+Ashen,M,ashen203,ashen.302, Cashier
+Shamal,M,ShamalAd,shamal.12.1, Cashier
+Sample,F,Cashier,cashier.123, Cashier
+Randima,F,TSRF,sr726, Cashier
+Maleesha,M,shenal,shenal123,Cashier
+Manitha,M,Maniyeah,maniya123,Cashier
+Theekshana,M,kande,kande23,Cashier
+Chamika,F,chamika96,chamika96,Cashier
+Pasan,M,psanx,nb123,Cashier

@@ -1,0 +1,5 @@
+1,Chew Toy,Pet Toys,800.0,4,Red and white dog toy
+2,Cat Collar,Collars,600.0,5,Silver cat collar
+3,Ball,Pet Toys,350.0,10,Rubber ball
+4,Brush,Grooming Products,500.0,6,Brown brush 
+5,Dog cage,Cages,9000.0,3,Small wooden cage
