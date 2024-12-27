@@ -25,14 +25,8 @@ nb-configuration.xml
 Thumbs.db        # Windows
 desktop.ini      # Windows
 
-# Node.js dependencies (if applicable)
-node_modules/
-
-# Python virtual environments (if applicable)
-venv/
-__pycache__/
-
 # Java-specific files
 *.out
 *.project
 *.classpath
+pom.xml
