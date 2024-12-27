@@ -1,0 +1,38 @@
+# Ignore NetBeans specific files and folders
+nbproject/private/
+nbbuild/
+build/
+dist/
+nbactions.xml
+nb-configuration.xml
+
+# Ignore compiled classes and files
+*.class
+*.jar
+*.war
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore IDE-specific files (other IDEs like IntelliJ/Eclipse)
+.idea/
+*.iml
+.vscode/
+
+# OS-specific files
+.DS_Store        # macOS
+Thumbs.db        # Windows
+desktop.ini      # Windows
+
+# Node.js dependencies (if applicable)
+node_modules/
+
+# Python virtual environments (if applicable)
+venv/
+__pycache__/
+
+# Java-specific files
+*.out
+*.project
+*.classpath
